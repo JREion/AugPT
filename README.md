@@ -7,6 +7,11 @@
 
 For CLIP-based prompt tuning, introducing more data as additional knowledge for enhancing fine-tuning process is proved to be an effective approach. Existing data amplification strategies for prompt tuning typically rely on external knowledge (e.g., large language models or pre-structured knowledge bases), resulting in higher costs for data collection and processing, while generally ignoring further utilization of features in image modality. To address this, we propose **Aug**mentation-driven **P**rompt **T**uning (**AugPT**), a self-contained distillation-based prompt tuning approach using only internal augmentation on raw dataset to better exploit known features. Specifically, AugPT employs self-supervised augmentation on unlabeled images in the training set, and introduces a novel gating mechanism based on consensus test, reusing the pre-trained prompt tuning backbone model to spontaneously filter noisy samples, further enhancing the quality of augmented views. Extensive experiments validate that AugPT simultaneously enhances model performance and generalization capability without using appended external knowledge.
 
+### Highlights
+- Compared with backbones, AugPT does not require any external knowledge and additional learnable parameters.
+- To automatically filter noisy samples, AugPT leverages a previously overlooked property in prompt tuning: _logit-level consistency reflects semantic similarity across images_ to construct a novel Consensus-based Filtering Gate.
+- AugPT achieves new SOTA on 11/11 datasets, especially in data-scarce scenarios.
+
 ### Our Previous Work on Prompt Tuning
 - **[CVPR 2025]** [DPC: Dual-Prompt Collaboration for Tuning Vision-Language Models](https://arxiv.org/abs/2503.13443)
 - **[ICME 2025]** [MAO: Efficient Model-Agnostic Optimization of Prompt Tuning for Vision-Language Models](https://arxiv.org/abs/2503.18160)
